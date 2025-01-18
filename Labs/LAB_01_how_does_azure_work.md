@@ -90,7 +90,7 @@ In this lab, you will:
 <br/><br/>
 
 <details>
-  <summary markdown="span">Find budgets applied to your subscription </summary>
+  <summary markdown="span">Find budgets applied to your subscription - based on the permissions, you might not have permissions to see it </summary>
 
 1. In the Azure portal, search for and select **Subscriptions**
 1. Click on your subscription
@@ -106,7 +106,7 @@ In this lab, you will:
 1. In the Azure portal, click on the Cloud shell on the top right
    ![image](../Images/01_05.png)
    ![image](../Images/01_06.png)
-1. type "Date" to show system time
+1. change from PowerShell to Bash and type "Date" to show system time
    ![image](../Images/01_07.png)
 
 

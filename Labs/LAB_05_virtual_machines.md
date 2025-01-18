@@ -28,20 +28,22 @@ In this lab, you will:
 
     |Name|Value|
     |---|---|
-    |Resource Group| Production |
-    |Name| myfirstVM |
-    |Image| Unitnut Server 20.04 LTS |
+    |Resource Group| rgProduction |
+    |Name| vmmyfirstVM |
+    |Image| Unitnut Server 24.04 LTS |
     |Size| B1ls |
     |Auth type| Password |
     |Username| linuxuser |
     |Password| Pa$$W0rd1234 |
     |OSDisk| Standard SSD, locally redundand |
 
+    Available sizes depend on numerous number of parameters. To be able to select B1Is size, you need to select Availability option to "No infrastructure redundancy required" and Security set to "Standard"
+
     All other settings leave default for now. We will configure networking later
 
 1. Get the public IP assigned to your VM
-1. Connect to your VM via cloudshell (ssh linuxuser@<yourip> ) and ping 8.8.8.8. (ctry+c to stop)
-1. Type Exit to disconnect
+2. Connect to your VM via cloudshell (ssh linuxuser@PUBLIC IP ADDRESS ) and ping 8.8.8.8. (ctrl+c to stop)
+3. Type Exit to disconnect
 
 
 <details>

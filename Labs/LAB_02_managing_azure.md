@@ -27,7 +27,7 @@ In this lab, you will:
 
 
 <details>
-  <summary markdown="span">Create 2 resource groups - Production (West Europe) and Test (North Europe)</summary>
+  <summary markdown="span">Create 2 resource groups - rgProduction (West Europe) and rgTest (North Europe)</summary>
 
 
 1. In this task, you will use the Azure portal to create resource groups and create a disk in the resource group.
@@ -36,7 +36,7 @@ In this lab, you will:
 
 1. In the Azure portal, search for and select **Resource groups**, click **+ Create**:
 
-1. Type resource group name ("Production") and select Region West Europe
+1. Type resource group name ("rgProduction") and select Region West Europe
 
 1. Click **Review + Create** and then click **Create**.
 
@@ -45,7 +45,7 @@ In this lab, you will:
 
     >**Note**: Wait until the resource group is created. This should take less than a minute.
 
-1. Repeat for "Test" and deploy to North Europe
+1. Repeat for "rgTest" and deploy to North Europe
 
 </details>
 <br/><br/>
@@ -75,7 +75,7 @@ In this lab, you will:
 
     |Setting|Value|
     |---|---|
-    |Resource group| **Test** |
+    |Resource group| **rgTest** |
     |Storage account name| **myfirststorageaccount** |
     |Region| **North Europe** |
     |Redindancy| **Localy redundant storage** |
@@ -129,7 +129,7 @@ In this lab, you will:
 <br/><br/>
 
 <details>
-  <summary markdown="span">Move the storage account you created before to "Production" resource group </summary>
+  <summary markdown="span">Move the storage account you created before to "rgProduction" resource group </summary>
 
 1. In the Azure portal, search for and select **Storage accounts**
 1. Select your storage account
@@ -137,7 +137,7 @@ In this lab, you will:
 
     ![image](../Images/02_05.png)
 
-1. Select **Production** and click next and observe a failed validation
+1. Select **rgProduction** and click next and observe a failed validation - DEPENDING ON THE SETTINGS FROM THE LAB, IF THE POLICIES WERE NOT PART OF THE INITIAL LAB, THIS STEP MIGHT SUCCEED
 
     ![image](../Images/02_06.png)
 

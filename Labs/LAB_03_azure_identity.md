@@ -16,7 +16,7 @@ First try to solve the challenges on your own, in case you have trouble, click o
 
 In this lab, you will:
 
-+ Create a new Azure Active Directory tennant and a new AD user
++ Create a new Entra ID B2C Directory tennant and a new AD user
 + Assign roles to the new user
 + Create an AD group
 
@@ -27,12 +27,12 @@ In this lab, you will:
 
 
 <details>
-  <summary markdown="span">Create a new Azure Active Directory</summary>
+  <summary markdown="span">Create a new Entra ID B2C Tenant</summary>
 
 
 1. Sign in to the [**Azure portal**](http://portal.azure.com).
 
-1. In the Azure portal, search for and select **Azure Active Directory**:
+1. In the Azure portal, search for and select **Entra ID**:
 1. Select **Manage tennants** and clikc Create:
 1. Select Azure Active Directory and click Next: Configuration
 1. Select a globaly unique name for your domain (note - it cannot be changed later!). The name will be <yourname>.onmicrosoft.com
@@ -82,7 +82,7 @@ In this lab, you will:
 
     ![image](../Images/03_05.png)
 
-  Note that we cannot add any Azure permission, since the thew Active Directory does not contain any subscriptions
+  Note that we cannot add any Azure permission, since the thew Entra ID does not contain any subscriptions
 
 </details>
 <br/><br/>

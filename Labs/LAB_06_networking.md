@@ -26,21 +26,21 @@ In this lab, you will:
 
 ### Challenge 1 - First, virtual networks
 
-1. Create a new Virtual Network in Production
+1. Create a new Virtual Network in rgProduction
 
     |Name|Value|
     |---|---|
-    |Name| prodvnet |
+    |Name| vnetprodvnet |
     |IP Adderess space| 10.0.0.0/16 |
     |Subnet - rename to frontend | 10.0.0.0/24 |
 
 1. Add a subnet named "backend" with 10.0.1.0/24 
 
-1. Create a new Virtual Network in Test
+1. Create a new Virtual Network in rgTest
 
     |Name|Value|
     |---|---|
-    |Name| testvnet |
+    |Name| vnettestvnet |
     |IP Adderess space| 10.1.0.0/16 |
     |Subnet - rename to frontend | 10.1.0.0/24 |
 
@@ -54,7 +54,7 @@ In this lab, you will:
 ![image](../Images/06_01.png)
 ![image](../Images/06_02.png)
 
-when creating testvnet, you will need to delete the assigned IP address space first
+When creating vnettestvnet, you will need to delete the assigned IP address space first
 
 ![image](../Images/06_03.png)
     
@@ -68,15 +68,15 @@ when creating testvnet, you will need to delete the assigned IP address space fi
 
     |Name|Value|
     |---|---|
-    |Resource Group| Production |
-    |Name| frontendVM |
-    |Image| Unitnut Server 20.04 LTS |
+    |Resource Group| rgProduction |
+    |Name| vmfrontendVM |
+    |Image| Unitnut Server 24.04 LTS |
     |Size| B1ls |
     |Auth type| Password |
     |Username| linuxuser |
     |Password| Pa$$W0rd1234 |
     |OSDisk| Standard SSD, locally redundand |
-    |Virtual network| prodvnet |
+    |Virtual network| vnetprodvnet |
     |Subnet| frontend |
 
 
@@ -88,23 +88,23 @@ when creating testvnet, you will need to delete the assigned IP address space fi
 
     |Name|Value|
     |---|---|
-    |Resource Group| Production |
-    |Name| backendVM |
-    |Image| Unitnut Server 20.04 LTS |
+    |Resource Group| rgProduction |
+    |Name| vmbackendVM |
+    |Image| Unitnut Server 24.04 LTS |
     |Size| B1ls |
     |Auth type| Password |
     |Username| linuxuser |
     |Password| Pa$$W0rd1234 |
     |OSDisk| Standard SSD, locally redundand |
     |Public inbound port| none |
-    |Virtual network| prodvnet |
+    |Virtual network| vnetprodvnet |
     |Subnet| backend |
     |PublicIP| none |
 
 
-    Make sure to place in the right network and subnet. The public inbound port should be set to **none**, as backend machines shoudl not be publically accessible. Also, no public IP.
+    Make sure to place in the right network and subnet. The public inbound port should be set to **none**, as backend machines shoudl not be publically accessible. Also, no public IP should be assigned to the VM.
 
-    write down the privateIP address - it should be 10.0.1.4
+    Write down the privateIP address - it should be 10.0.1.4
 
 
 
@@ -119,9 +119,9 @@ when creating testvnet, you will need to delete the assigned IP address space fi
 
 ### Challenge 3 ping one machine from another
 
-1. Use Cloud Shell to login to frontendVM (ssh linuxuser@<public IP>)
-1. use "ping <ip of the backendVM>"
-1. keep the cloud shell open, but you can minimize it
+1. Use Cloud Shell to login to vmfrontendVM (ssh linuxuser@Public IP Address of the frontend VM (Challenge 2.1.))
+2. Use "ping <ip of the backendVM>"
+3. Keep the cloud shell open - you can minimize it
 
 
 <details>
@@ -137,20 +137,20 @@ when creating testvnet, you will need to delete the assigned IP address space fi
 
     |Name|Value|
     |---|---|
-    |Resource Group| Production |
-    |Name| testVM |
-    |Image| Unitnut Server 20.04 LTS |
+    |Resource Group| rgProduction |
+    |Name| vmtestVM |
+    |Image| Unitnut Server 24.04 LTS |
     |Size| B1ls |
     |Auth type| Password |
     |Username| linuxuser |
     |Password| Pa$$W0rd1234 |
     |OSDisk| Standard SSD, locally redundand |
     |Public inbound port| none |
-    |Virtual network| testnet |
+    |Virtual network| vnettestnet |
     |Subnet| frontend |
     |PublicIP| none |
 
-    write donw the private IP of the virtual machine. It should be 10.1.0.4
+    Write donw the private IP of the virtual machine. It should be 10.1.0.4
 
 1. After deployment, return to Cloud Shell
 1. Ping 10.1.0.4 - it is unable to ping it
@@ -170,7 +170,7 @@ when creating testvnet, you will need to delete the assigned IP address space fi
     |Name|Value|
     |---|---|
     |Peering link name(2x)| test-prod |
-    |PVirtual Network| testvnet |
+    |PVirtual Network| vnettestvnet |
 
 1. Wait for peering status to update (connected)
 1. After deployment, return to Cloud Shell
