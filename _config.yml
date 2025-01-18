@@ -1,0 +1,17 @@
+remote_theme: mpregl/Nephos-Theme
+exclude:
+  - readme.md
+  - .github/
+header_pages:
+  - index.html
+author: Nephos
+plugins:
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jemoji
+markdown: kramdown
+kramdown:
+   syntax_highlighter_opts:
+      disable : true
+   parse_block_html: true
+theme: jekyll-theme-slate
